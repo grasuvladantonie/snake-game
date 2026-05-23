@@ -1,0 +1,28 @@
+# Neon Serpent 🐍
+
+Un joc clasic de tip Snake, scris în **C++** folosind biblioteca **raylib**. Această versiune propune o tematică vizuală modernă de tip Neon/Cyberpunk și o structură a codului bazată pe Programare Orientată pe Obiect (OOP).
+
+## ✨ Caracteristici
+* **Tematică vizuală Neon:** Culori contrastante (fundal dark, șarpe cyan, puncte roz și text galben).
+* **Fără dependențe externe:** Grafica este generată exclusiv din cod (folosind funcțiile de desenare din raylib), eliminând nevoia unui folder cu imagini separate.
+* **Control Extins:** Suportă atât tastele direcționale (Săgeți), cât și tastele `W`, `A`, `S`, `D`.
+* **Cod curat și optimizat:** Logica de timp, detectarea coliziunilor și generarea punctelor sunt complet încapsulate în clase (`GameEngine`, `Serpent`, `Snack`).
+
+## 🛠️ Cerințe preliminare
+
+Pentru a compila și rula acest joc, ai nevoie de:
+1. Un compilator de C++ (ex: `GCC` / `MinGW` pentru Windows).
+2. Biblioteca [raylib](https://www.raylib.com/) instalată și configurată pe sistemul tău.
+
+## 🚀 Cum să rulezi proiectul
+
+### Dacă folosești VS Code (cu extensii C/C++ și raylib):
+1. Deschide folderul proiectului în VS Code.
+2. Asigură-te că task-urile de build pentru raylib sunt configurate corect în fișierul `.vscode/tasks.json`.
+3. Apasă `F5` (sau rulează task-ul de build) pentru a compila și porni jocul.
+
+### Dacă folosești terminalul (Linux / macOS):
+Deschide terminalul în folderul cu fișierul `.cpp` și rulează comanda:
+```bash
+g++ main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o NeonSerpent
+./NeonSerpent
