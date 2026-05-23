@@ -1,28 +1,48 @@
 # Neon Serpent 🐍
 
-Un joc clasic de tip Snake, scris în **C++** folosind biblioteca **raylib**. Această versiune propune o tematică vizuală modernă de tip Neon/Cyberpunk și o structură a codului bazată pe Programare Orientată pe Obiect (OOP).
+A classic Snake game built with **C++** and the **raylib** library. This project features a modern neon/cyberpunk visual aesthetic and is structured using clean Object-Oriented Programming (OOP) principles. 
 
-## ✨ Caracteristici
-* **Tematică vizuală Neon:** Culori contrastante (fundal dark, șarpe cyan, puncte roz și text galben).
-* **Fără dependențe externe:** Grafica este generată exclusiv din cod (folosind funcțiile de desenare din raylib), eliminând nevoia unui folder cu imagini separate.
-* **Control Extins:** Suportă atât tastele direcționale (Săgeți), cât și tastele `W`, `A`, `S`, `D`.
-* **Cod curat și optimizat:** Logica de timp, detectarea coliziunilor și generarea punctelor sunt complet încapsulate în clase (`GameEngine`, `Serpent`, `Snack`).
+## ✨ Features
+* **Modern Aesthetic:** A sleek neon color palette featuring a dark background, a glowing cyan snake, pink collectibles, and yellow UI elements.
+* **Procedural Graphics:** All visuals are drawn using raylib's built-in shape rendering functions. There are no external image dependencies or asset folders required to run the game.
+* **Smooth Controls:** Full support for both `WASD` and `Arrow` keys for comfortable gameplay.
+* **OOP Architecture:** Clean and maintainable codebase divided into logical classes (`GameEngine`, `Serpent`, `Snack`).
 
-## 🛠️ Cerințe preliminare
+## 🛠️ Prerequisites
 
-Pentru a compila și rula acest joc, ai nevoie de:
-1. Un compilator de C++ (ex: `GCC` / `MinGW` pentru Windows).
-2. Biblioteca [raylib](https://www.raylib.com/) instalată și configurată pe sistemul tău.
+To compile and run this game, you will need:
+1. A modern C++ compiler (e.g., `GCC` / `MinGW`, `Clang`, or `MSVC`).
+2. The [raylib](https://www.raylib.com/) library installed and configured on your system.
 
-## 🚀 Cum să rulezi proiectul
+## 🚀 Getting Started
 
-### Dacă folosești VS Code (cu extensii C/C++ și raylib):
-1. Deschide folderul proiectului în VS Code.
-2. Asigură-te că task-urile de build pentru raylib sunt configurate corect în fișierul `.vscode/tasks.json`.
-3. Apasă `F5` (sau rulează task-ul de build) pentru a compila și porni jocul.
+### Using VS Code
+1. Clone the repository and open the folder in VS Code.
+2. Ensure you have the C/C++ extension installed and your `.vscode/tasks.json` is properly configured to link raylib.
+3. Press `F5` (or run your specific build task) to compile and launch the game.
 
-### Dacă folosești terminalul (Linux / macOS):
-Deschide terminalul în folderul cu fișierul `.cpp` și rulează comanda:
+### Using the Terminal (Linux / macOS)
+If you have raylib installed globally, you can compile the game directly from the terminal. Navigate to the project directory and run:
+
 ```bash
 g++ main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o NeonSerpent
 ./NeonSerpent
+(Note: Compiler flags may vary slightly depending on your operating system and how raylib was installed.)
+
+🎮 Controls
+W / Up Arrow: Move Up
+
+S / Down Arrow: Move Down
+
+A / Left Arrow: Move Left
+
+D / Right Arrow: Move Right
+
+The game starts automatically when you press a movement key. If you hit the wall or your own tail, the game will instantly reset.
+
+📂 Code Structure
+Serpent: Manages the snake's body parts (using a std::deque), movement logic, growth, and rendering.
+
+Snack: Handles the random spawning of the collectible item, ensuring it never spawns inside the snake's body.
+
+GameEngine: The core controller that manages the game loop, keeps track of time/ticks, handles collisions, and updates the score.
